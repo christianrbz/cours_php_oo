@@ -15,7 +15,7 @@
     
     EXERCICE BONUS => controler la longeur du pseudo et du mdp. 
     Le pseudo doit contenir entre 4 et 15 caractères
-    Le mdp doit contenir minimum 8 caractères 
+    Le mdp doit contenir minimum 8 caractères
 
  */
 
@@ -38,7 +38,7 @@ class Membre
 
     public function setPseudo($pseudo)
     {
-        if (iconv_strlen(trim($pseudo)) > 4 || iconv_strlen(trim($pseudo)) < 15) {
+        if (ctype_alpha($pseudo) && iconv_strlen(trim($pseudo)) >= 4 && iconv_strlen(trim($pseudo)) <= 15) {
             $this->pseudo = $pseudo;
         } else {
             echo "ERREUR Le pseudo doit contenir entre 4 et 15 caractères <br>";
@@ -47,18 +47,18 @@ class Membre
 
     public function setMdp($mdp)
     {
-        if (iconv_strlen(trim($mdp)) > 8) {
+        if (iconv_strlen(trim($mdp)) >= 8) {
             $this->mdp = $mdp;
         } else {
-            echo "Le mdp doit contenir minimum 8 caractères  <br>";
+            echo "ERREUR Le mdp doit contenir au minimum 8 caractères  <br>";
         }
     }
 }
 
 
-$user = new Membre();
-$user->setPseudo("Christian5");
-$user->setMdp("azerty123");
+$membre = new Membre();
+$membre->setPseudo("Christian");
+$membre->setMdp("azerty123");
 
-echo "Pseudo : " . $user->getPseudo() . "<br>";
-echo "Mot de passe : " . $user->getMdp();
+echo "Pseudo : " . $membre->getPseudo() . "<br>";
+echo "Mot de passe : " . $membre->getMdp();
