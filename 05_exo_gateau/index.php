@@ -15,7 +15,7 @@
 //                     $nombreDePart;
 //     2.2 - Créez les getter et setter
 
-//     2.3 - Déclarez un constructeur qui obligera a rentrer un nom et la quantité d'Ingredient necessaire pour réaliser le gateau (ex : 12) 
+//     2.3 - Déclarez un constructeur qui obligera a rentrer un nom et la quantité d'Ingredient necessaire pour réaliser le gateau 
 
 //     2.4 - Déclarez 2 méthodes couperGateau() et distribuerGateau()
 //         => couperGateau() : attendra en paramètre le nombre de part que l'on souhaite avoir (integer). La méthode enregistrera le nombre de part dans la propriété prévue ($nombreDePart) et retournera la phrase suivante : 'Le gateau a été coupé en X parts'
@@ -50,20 +50,25 @@
 
 require_once "Gateau.php";
 
-$gateau = new Gateau("fraisier");
+$fraisier = new Gateau("fraisier", 12);
 
-echo "Le gateau est un : " . $gateau->getNom() . "<br>";
+// echo "Le gateau est un : " . $fraisier->getNom() . "<br>"; 
 
-$gateau->couperGateau(4);
-$gateau->distribuerGateau(1);
+echo $fraisier->couperGateau(10);
+
+echo $fraisier->distribuerGateau(2);
 
 require_once "Ingredient.php";
 
-$ingredient = new Ingredient("fraises", "15");
 
-echo "L'ingrédient du gateau est : " . $ingredient->getNom() . " et le stock est : " . $ingredient->getStock() ."<br>";
 
-$ingredient->reduireStock(4);
+$fraise = new Ingredient("fraise", "20");
+
+// echo "L'ingrédient du gateau est : " . $ingredient->getNom() . " et le stock est : " . $ingredient->getStock() ."<br>";
+
+echo $fraisier->cuisinerGateau($fraise);
+
+
 
 
 

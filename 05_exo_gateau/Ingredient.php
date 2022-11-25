@@ -51,8 +51,7 @@ class Ingredient {
         return $this;
     }
 
-    public function reduireStock($stock) {
-        $this->setStock($this->getStock() - $stock);
-        echo "Il reste : " . ($this->getstock()). " stocks <br>";
+    public function reduireStock($quantite) {
+        $this->setStock($this->getStock() - $quantite);
     }
 }
