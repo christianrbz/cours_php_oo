@@ -10,3 +10,4 @@ class Animal {
         return "je me déplace";
     }
 }
+

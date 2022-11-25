@@ -1,8 +1,11 @@
-<?php 
+<?php
 
-class Chat extends Animal {
-    public function quiSuisJe() {
-        return "Je suis un Chat <br>";
+class Chat extends Animal
+{
+
+    public function quiSuisJe()
+    {
+        return "Je suis un chat <br>";
     }
 
     public function phrase()
