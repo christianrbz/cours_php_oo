@@ -1,1 +1,1 @@
-Cours avec Doranco pour apprendre les bases du PHP Orienté Objet
+Cours avec l'école Doranco sur les bases du PHP Orienté Objet
